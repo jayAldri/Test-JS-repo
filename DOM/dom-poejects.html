@@ -8,11 +8,24 @@
 <body>
 
   <h4>YouTube Subscribe Button</h4>
-  <button>Subscribe</button>
+  <button class="js-btn" onclick="updateSubscribeBtn();">Subscribe</button>
 
   <hr>
 
   <h4>Amazon Shipping Calculator</h4>
+
+
+  <script>
+    function updateSubscribeBtn () {
+      const btnElem = document.querySelector('.js-btn');
+
+      if (btnElem.innerText === 'Subscribe') {
+        btnElem.innerHTML = 'Subscribed';
+      } else {
+        btnElem.innerHTML = 'Subscribe';
+      }
+    }
+  </script>
   
 </body>
 </html>
