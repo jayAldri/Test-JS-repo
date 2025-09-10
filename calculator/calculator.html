@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculator</title>
+</head>
+<body>
+
+  <p>
+    <button onclick="
+       updatedCalculation('7');
+    ">
+      7
+    </button>
+
+    <button onclick="
+        updatedCalculation('8');
+    ">
+      8
+    </button>
+
+    <button onclick="
+        updatedCalculation('9');
+    ">
+      9
+    </button>
+
+    <button onclick="
+        updatedCalculation('*');
+    ">
+      *
+    </button>
+  </p>
+
+    <p>
+    <button onclick="
+        updatedCalculation('4');
+    ">
+      4
+    </button>
+  
+    <button onclick="
+      updatedCalculation('5');
+    ">
+      5
+    </button>
+
+    <button onclick="
+        updatedCalculation('6');
+    ">
+      6
+    </button>
+
+    <button onclick="
+        updatedCalculation('-');
+    ">
+      -
+    </button>
+  </p>
+
+    <p>
+    <button onclick="
+        updatedCalculation('1');
+      ">
+      1
+    </button>
+  
+    <button onclick="
+        updatedCalculation('2');
+      ">
+      2
+    </button>
+
+    <button onclick="
+       updatedCalculation('3');
+      ">
+      3
+    </button>
+
+    <button onclick="
+        updatedCalculation('+');
+    ">
+      +
+    </button>
+  </p>
+
+  <button onclick="
+    calculation = eval(calculation);
+    console.log(calculation);
+    localStorage.setItem('calculation',calculation);
+  ">
+    =
+  </button>
+  <button onclick="
+    calculation = '';
+    console.log(calculation);
+    localStorage.setItem('calculation',calculation);
+  ">Clear</button>
+
+
+  <script>
+    // let calculation = '';
+
+    let calculation = localStorage.getItem('calculation') ||'';
+
+    function updatedCalculation(value) {
+      calculation += value;
+      console.log(calculation);
+      localStorage.setItem('calculation',calculation);
+    }
+
+  </script>
+  
+</body>
+</html>

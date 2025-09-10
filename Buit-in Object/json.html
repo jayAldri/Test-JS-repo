@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Built-in Object JSON</title>
+</head>
+<body>
+
+
+  <script>
+
+    const product2 = {
+      name: 'shirt',
+      price: 1990,
+      sizes: ['small', 'medium', 'large'],
+      available: true,
+      rating: {
+        star: 4.5,
+        count: 87,
+      },
+      fun: function function1() {
+        console.log('function inside object');
+      }
+    }
+    console.log(product2);
+    console.log(product2.name);
+    console.log(product2['name']);
+
+    console.log(product2.rating.star);
+    product2.fun();
+
+    console.log(JSON.stringify(product2));
+
+    const jsongString = JSON.stringify(product2);
+    console.log(JSON.parse(jsongString));
+
+  </script>
+  
+</body>
+</html>

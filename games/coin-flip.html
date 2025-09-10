@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Coin Flip Game</title>
+</head>
+<body>
+
+  <h3>Coin Flip Game</h3>
+
+  <button onclick="
+    playGame('head');
+  ">head</button>
+
+  <button onclick="
+    playGame('tail');
+  ">tail</button>
+
+  <button onclick="
+    score.wins = 0;
+    score.losses = 0;
+    localStorage.removeItem('score');
+    alert('Score was reset.');
+  ">Reset Score</button>
+
+  <script>
+    let score = JSON.parse(localStorage.getItem('score')) || {
+      wins: 0,
+      losses: 0
+    };
+
+    function playCoinFlip() {
+      const randomNumber = Math.random();
+      let coinSide = '';
+
+      if (randomNumber >= 0 && randomNumber < 0.5) {
+        coinSide = 'head';
+      } else if (randomNumber >= 0.5 && randomNumber < 1) {
+        coinSide = 'tail';
+      }
+      return coinSide;
+    }
+
+    function playGame(guess){
+      const coinSide = playCoinFlip();
+      let result = '';
+
+      if (guess === 'tail') {
+        if (coinSide === 'head') {
+          result = 'You win!';
+        } else {
+          result = 'You lose!';
+        }
+      } else if (guess === 'head') {
+        if (coinSide === 'tail') {
+          result = 'You lose';
+        } else  {
+          result = 'You win!';
+        }
+      }
+
+      if (result === 'You win!') {
+        score.wins += 1;
+      } else if (result === 'You lose!') {
+        score.losses += 1;
+      }
+
+      localStorage.setItem('score', JSON.stringify(score));
+       alert(`You flipped a ${coinSide}. ${result}
+       Wins: ${score.wins}, Losses: ${score.losses}`);
+    }
+
+
+  </script>
+
+</body>
+</html>
