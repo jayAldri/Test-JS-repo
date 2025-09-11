@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lesson 9 Exercises DOM</title>
+</head>
+<body>
+  <button onclick="
+      btnChange('heads');
+    ">heads</button>
+  <button onclick="
+     btnChange('tails');
+  ">tails</button>
+  <p class="js-You-chose"></p>
+
+  <hr>
+
+  <input placeholder="input name" type="text" class="js-input" onkeydown="keyDown(event)">
+  <button onclick="
+    const inputElem = document.querySelector('.js-input');
+    document.querySelector('.js-result').innerHTML = `Your name is ${inputElem.value}`;
+  ">Submit</button>
+  <p class="js-result"></p>
+
+  <script>
+
+    function keyDown (event) {
+      if (event.key === 'Enter') {
+        const inputElem = document.querySelector('.js-input');
+        document.querySelector('.js-result').innerHTML = `Your name is ${inputElem.value}`;
+      }
+    }
+
+
+    function btnChange(pick) {
+  
+      let result = '';
+
+      if (pick === 'heads') {
+        result = 'heads';
+      }  else {
+        result = 'tails'
+      }
+
+      document.querySelector('.js-You-chose').innerHTML = `You chose: ${result}`;
+    }
+
+  </script>
+  
+</body>
+</html>
