@@ -7,6 +7,8 @@
 </head>
 <body>
 
+  <p id="js-computation"></p>
+
   <p>
     <button onclick="
        updatedCalculation('7');
@@ -87,14 +89,14 @@
 
   <button onclick="
     calculation = eval(calculation);
-    console.log(calculation);
+    CalcuCompute();
     localStorage.setItem('calculation',calculation);
   ">
     =
   </button>
   <button onclick="
     calculation = '';
-    console.log(calculation);
+    CalcuCompute();
     localStorage.setItem('calculation',calculation);
   ">Clear</button>
 
@@ -106,8 +108,12 @@
 
     function updatedCalculation(value) {
       calculation += value;
-      console.log(calculation);
+      CalcuCompute();
       localStorage.setItem('calculation',calculation);
+    }
+
+    function CalcuCompute(){
+      document.getElementById("js-computation").innerHTML = calculation;
     }
 
   </script>

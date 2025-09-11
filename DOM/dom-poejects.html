@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>DOM POrjects</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
@@ -36,6 +37,10 @@
     window.document
     window.console.log('window');
     window.alert();
+
+
+
+
     */
 
 
@@ -62,8 +67,10 @@
 
       if (btnElem.innerText === 'Subscribe') {
         btnElem.innerHTML = 'Subscribed';
+        btnElem.classList.add('is-subscribed');
       } else {
         btnElem.innerHTML = 'Subscribe';
+        btnElem.classList.remove('is-subscribed');
       }
     }
   </script>
