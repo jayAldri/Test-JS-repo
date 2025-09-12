@@ -4,45 +4,107 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Rock Paper Scissors</title>
+
+  <style>
+    body {
+      background-color: rgb(25, 25, 25);
+      color: white;
+      font-family: Arial, Helvetica, sans-serif;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      
+    }
+    .title {
+      font-weight: bold;
+      font-size: 30px;
+    }
+    .move-ico {
+      height: 50px;
+    }
+    .move-btn{
+      background-color: transparent;
+      border-radius: 100%;
+      padding: 20px 23px;
+      border: 2.5px solid;
+      border-color: white;
+      margin-left: 10px;
+      cursor: pointer;
+    }
+    .move-btn:hover{
+      box-shadow: 0 0 15px #fff;
+    }
+    .result-text1{
+      font-size: 30px;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    }
+    .result-text{
+      font-size: 25px;
+    }
+
+    .btn-reset{
+      background-color: rgb(25, 25, 25);
+      color: white;
+      border: 2px solid;
+      padding: 12px;
+      font-size: 15px;
+      font-weight: 700;
+      border-radius: 12px;
+      cursor: pointer;
+
+    }
+    .btn-reset:hover{
+      box-shadow: 0 0 15px #fff;
+    }
+
+
+  </style>
+
 </head>
+
+
 <body>
 
-  <h3> 
-    Rock Paper Scissors Game
-  </h3>
+  <div class="container">
+    <h3 class="title"> 
+      Rock Paper Scissors Game
+    </h3>
 
-  <button onclick="
-    playGame('rock');
-  ">
-    Rock
-  </button>
+    <button class="move-btn" onclick="
+      playGame('Rock');
+    ">
+      <img src="rock-emoji.png" alt="" class="move-ico">
+    </button>
 
-  <button onclick="
-    playGame('paper');
-  ">
-    Paper
-  </button>
+    <button class="move-btn" onclick="
+      playGame('Paper');
+    ">
+      <img src="paper-emoji.png" alt="" class="move-ico">
+    </button>
 
-  <button onclick="
-    playGame('scissors');
-  ">
-    Scissors
-  </button>
+    <button class="move-btn" onclick="
+      playGame('Scissors');
+    ">
+      <img src="scissors-emoji.png" alt="" class="move-ico">
+    </button>
 
-  <!-- updated code with the DOM -->
-  <p class="js-result"></p>
-  <p class="js-moves"></p>
-   <p class="js-score"></p>
+    <!-- updated code with the DOM -->
+    <p class="js-result result-text1"></p>
+    <p class="js-moves result-text" ></p>
+    <p class="js-score result-text"></p>
 
-  <button onclick="
-    score.wins = 0;
-    score.losses = 0;
-    score.ties = 0;
-    localStorage.removeItem('score');
-    alert('Score was reset.');
-    updatedScoreElem();
+    <button class="btn-reset" onclick="
+      score.wins = 0;
+      score.losses = 0;
+      score.ties = 0;
+      localStorage.removeItem('score');
+      alert('Score was reset.');
+      updatedScoreElem();
 
-  ">Reset score</button>
+    ">Reset score</button>
+  </div>
 
   <script>
 
@@ -62,11 +124,11 @@
       let computerMove = '';
 
       if (randomNumber >= 0 && randomNumber < 1/3) {
-        computerMove = 'rock';
+        computerMove = 'Rock';
       } else if (randomNumber >= 1/3 && randomNumber < 2/3) {
-        computerMove = 'paper';
+        computerMove = 'Paper';
       } else if (randomNumber >= 2/3 && randomNumber < 1) {
-        computerMove = 'scissors';
+        computerMove = 'Scissors';
       }
 
       return computerMove;
@@ -77,28 +139,28 @@
 
       let result = '';
 
-       if (playerMove === 'scissors') {
-        if (computerMove === 'rock') {
+       if (playerMove === 'Scissors') {
+        if (computerMove === 'Rock') {
           result = 'You lose!';
-        } else if (computerMove === 'paper') {
+        } else if (computerMove === 'Paper') {
           result = 'You win!';
-        } else if (computerMove === 'scissors') {
+        } else if (computerMove === 'Scissors') {
           result = 'Tie!';
         }
-      } else if (playerMove === 'rock') {
-        if (computerMove === 'rock') {
+      } else if (playerMove === 'Rock') {
+        if (computerMove === 'Rock') {
           result = 'Tie!';
-        } else if (computerMove === 'paper') {
+        } else if (computerMove === 'Paper') {
           result = 'You lose!';
-        } else if (computerMove === 'scissors') {
+        } else if (computerMove === 'Scissors') {
           result = 'You win!';
         }
-      } else if (playerMove === 'paper') {
-        if (computerMove === 'rock') {
+      } else if (playerMove === 'Paper') {
+        if (computerMove === 'Rock') {
           result = 'You win!';
-        } else if (computerMove === 'paper') {
+        } else if (computerMove === 'Paper') {
           result = 'Tie!';
-        } else if (computerMove === 'scissors') {
+        } else if (computerMove === 'Scissors') {
           result = 'You lose!';
         }
       }
@@ -117,7 +179,7 @@
 
       document.querySelector('.js-result').innerHTML = result;
       document.querySelector('.js-moves').innerHTML = `You ${playerMove}
-    - ${computerMove} Computer`;
+    - Computer Pick ${computerMove}`;
 
 
     }
