@@ -64,23 +64,40 @@
 
   <hr>
 
-  <button class="btn-gaming" onclick="btnGaming()">Gaming</button>
+  <button class="btn-gaming btn-gaming-1" onclick="btnGaming('.btn-gaming-1');">Gaming</button>
+  <button class="btn-gaming btn-gaming-2" onclick="btnGaming('.btn-gaming-2');">Music</button>
+  <button class="btn-gaming btn-gaming-3" onclick="btnGaming('.btn-gaming-3');">Tech</button>
+
+  <hr>
+
+
+
+
+
 
   <script>
 
     const btn = document.querySelector('.js-btn');
     console.log(btn.classList.contains('.js-btn'));
 
-    function btnGaming () {
-      const btn_Gaming = document.querySelector('.btn-gaming');
+    function btnGaming (selector) {
+      const btn_Gaming = document.querySelector(selector);
 
-      if (!btn_Gaming.classList.contains('btn-gaming-clicked')) {
+      if(!btn_Gaming.classList.contains('btn-gaming-clicked')) {
+        turnOffPreviousButton();
         btn_Gaming.classList.add('btn-gaming-clicked');
       } else {
         btn_Gaming.classList.remove('btn-gaming-clicked');
       }
+
     }
 
+    function turnOffPreviousButton() {
+      const previousButon = document.querySelector('.btn-gaming-clicked');
+      if(previousButon) {
+        previousButon.classList.remove('btn-gaming-clicked');
+      }
+    }
 
   </script>
   

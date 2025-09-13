@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+
+  <input placeholder="Cost of Product" class="js-input" onkeydown="handleCostKeyDown(event);">
+  <button class="js-btn" onclick="
+    calculateTotal();
+  ">Culculate</button>
+  <p class="js-total-cost"></p>
+  <p class="js-Calculations"></p>
+
+
+  <script>
+    function handleCostKeyDown (event) {
+       if (event.key === 'Enter') {
+       calculateTotal();
+    }
+    }
+
+    function calculateTotal () {
+      const inputElem = document.querySelector('.js-input');
+      let cost = Number(inputElem.value);
+
+      document.querySelector('.js-total-cost').innerHTML = '';
+      document.querySelector('.js-Calculations').innerHTML = '';
+
+      if (cost < 0) {
+        document.querySelector('.js-Calculations').innerHTML = `Error: cost cannot be less than $0`;
+        return;
+      }
+      
+    }
+
+
+  </script>
+  
+</body>
+</html>
