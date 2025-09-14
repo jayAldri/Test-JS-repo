@@ -9,7 +9,29 @@
 
 
   <script>
-    
+    const myArray = [10, 20, 30]
+    console.log(myArray);
+
+    console.log(myArray[1]);
+    myArray[0] = 99
+
+    [1, 'hello', true, {name: 'Jabi'}, [1,2]]
+    console.log(typeof[1,2]);
+
+    console.log(Array.isArray([1,2]));
+
+    //proties and methods
+    console.log(myArray.length);
+
+    //(.push) adds a vlaue to the end of the array
+    console.log(myArray.push(100));
+
+    //(.splice()) => Removes a value from an array
+    //1. Indext we want to remove
+    //2. Number of values to remove
+    myArray.splice(0, 1);
+    console.log(myArray);
+
   </script>
   
 </body>
