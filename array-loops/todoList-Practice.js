@@ -1,6 +1,6 @@
 const todoList = ['make coffee', 'Drink Coffee'];
 
-renderTodoList();
+// renderTodoList();
 
 function renderTodoList () {
 
@@ -16,6 +16,7 @@ function renderTodoList () {
 
   document.querySelector('.js-todo-list').innerHTML =  todoListHTML;
 }
+addToDo.renderTodoList();
 
 
 
