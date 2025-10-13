@@ -9,6 +9,7 @@
 
 
   <script>
+    /*
 
     const myarray = [10, 20, 30]
     console.log(myarray);
@@ -33,6 +34,40 @@
     myarray.splice(1, 1); // (start index, how many to remove)
     console.log(myarray); // [99, 30, 40]
 
+    
+
+
+    // Loop - repeat action
+    let i = 1;
+    while(i <= 5) {
+      console.log('Hello ' + i);
+      i++;
+    }
+
+    // for loop
+    for(let jahbi = 1; jahbi <= 5; jahbi++) {
+      console.log('Hi ' + jahbi);
+    }
+
+    let randomNumber = 0.5;
+
+    while(randomNumber < 0.5) {
+     randomNumber = Math.random();
+    }
+    console.log(randomNumber);
+    */
+
+    const todoList = [
+      'make dinner',
+      'wash dishes',
+      'Kape manen ah'
+    ];
+
+    // This technique is called Loop Through an Array
+    for(let index = 0; index < todoList.length; index++) {
+      const value = todoList[index];
+      console.log(value);
+    }
 
   </script>
   

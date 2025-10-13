@@ -24,10 +24,8 @@ function addToDo() {
   const inputElem = document.querySelector('.js-name-input');
 
   const name = inputElem.value;
-  console.log(name);
 
   todoList.push(name);
-  console.log(todoList);
 
   inputElem.value = '';
 
