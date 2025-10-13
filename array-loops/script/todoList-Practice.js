@@ -8,11 +8,10 @@ function renderTodoList () {
 
   for (let i = 0; i < todoList.length; i++) {
     const todo = todoList[i];
-    const html = `<p>${todo}</p>`;
+    const html = `<div>${todo}</div>`;
     todoListHTML += html;
 
   }
-  console.log(todoListHTML);
 
   document.querySelector('.js-todo-list').innerHTML =  todoListHTML;
 }

@@ -55,7 +55,7 @@
      randomNumber = Math.random();
     }
     console.log(randomNumber);
-    */
+    
 
     const todoList = [
       'make dinner',
@@ -68,6 +68,28 @@
       const value = todoList[index];
       console.log(value);
     }
+      */
+
+    // Problem (We have an array of number [1,1,3])
+    // How do we calculate the total?
+
+    // Accumulator pattern
+    // 1. Create a variable to store the result
+    // 2. loop through the array and update the result
+    const nums = [1, 1, 3];
+    let total = 0; // the Accumulator variable
+
+    for(let i = 0; i < nums.length; i++) {
+      const num = nums[i];
+      total += num;
+    }
+     console.log(total);// 5
+    
+
+
+
+
+
 
   </script>
   
