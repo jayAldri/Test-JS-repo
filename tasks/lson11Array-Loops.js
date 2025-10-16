@@ -81,5 +81,5 @@ function minMax(nums) {
   }
   return {min, max};
 }
-console.log(minMax([1, -3, 5])); // {min: -3, max: 5}
+console.log(minMax([])); // {min: 0, max: 0}
 console.log(minMax([-2, 3, -5, 7, 10])); // {min: -5, max: 10}
