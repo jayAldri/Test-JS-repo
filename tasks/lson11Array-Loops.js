@@ -36,6 +36,9 @@ console.log(addNum([1,2,3], 2)); // [3,4,5]
 console.log(addNum([1,2,3], 3)); // [4,5,6]
 console.log(addNum([-1,-2,0, 99], 2)); // [1,0,2,101]
 
+
+
+//Create a function addArrays(array1, array2) that takes 2 arrays of numbers and adds each number in the arrays together.
 function addArray(array1, array2){
   const newArray = [];
 
@@ -46,3 +49,37 @@ function addArray(array1, array2){
 }
 console.log(addArray([1,1,2], [1,1,3])); // [2,2,5]
 console.log(addArray([1,2,3], [4,5,6])); // [5,7,9]
+
+//11k. Create a function countPositive(nums) that takes an array of numbers and return how many numbers in the arrays aaare greater than 0.
+
+// function countPositive(nums) {
+//   let count = 0;
+//   for(let i = 0; i < nums.length; i++){
+//     if(nums[i] > 0){
+//       count++;
+//     }
+//   }
+//   return count;
+// }
+// console.log(countPositive([1, -3, 5])); // 2
+// console.log(countPositive([-2, 3, -5, 7, 10])); // 3
+
+
+//11l. Create a function minMax(nums) that takes an array of numbers and return boject with the minimum and maximum numbers in the array(do this using a loop instead of using something like Math.min)
+
+function minMax(nums) {
+  let min = nums[0];
+
+  let max = nums[0];
+  for(let i = 1; i < nums.length; i++){
+    if(nums[i] < min){
+      min = nums[i];
+    }
+    if(nums[i] > max){
+      max = nums[i];
+    }
+  }
+  return {min, max};
+}
+console.log(minMax([1, -3, 5])); // {min: -3, max: 5}
+console.log(minMax([-2, 3, -5, 7, 10])); // {min: -5, max: 10}
