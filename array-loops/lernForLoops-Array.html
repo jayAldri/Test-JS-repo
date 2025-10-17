@@ -25,7 +25,7 @@
         console.log(i);
       }
     }
-    */
+    
 
     let sum = 0;
     for (let i = 1; i <= 100; i++) {
@@ -33,6 +33,83 @@
     }
 
     console.log(sum);
+    */
+
+    //Array are References
+
+    const array1 = [1,2,3];
+
+    //create a copy of the variable [array1]
+    // const array2 = array1;
+    array2.push(4);
+    console.log(array1); //[1,2,3,4]
+    console.log(array2); //[1,2,3,4]
+
+    //to avoid this behavior, we can create a values in the array using slice()
+    const array2 = array1.slice(); //this two variables are point into different array in the memory 
+
+
+    //Shortcut: Destructuring
+    const [firstValue, secondValue] = [1,2,3];
+
+
+    //More Details about loops
+    //1. Break => exit a loop early
+    for (let i = 1; i <= 10; i++) {
+      //2. Continue => skip 1 iteration
+      if(i % 3 === 0) { //skip multiple of 3
+        continue;
+      }
+      console.log(i);
+      if (i === 8) {
+        break;
+      }
+    }
+
+    //count from 1 to 10 using while loop
+    let i = 1;
+    while (i <= 10) {
+      //Skip numbers that are divisible by 3(3,6,9)
+      if(i % 3 === 0) {
+        i++;
+        continue;
+      }
+      console.log(i);
+      i++;
+    }
+
+
+    //How to use lops with function?
+    //let a have an array with number and we want to create a of this array where each number is doubled.
+    function doubleArray(nums) {
+      // const nums = [1,1,3]; //this create an array where each number is doubled
+      const numsDoubled = [];
+      for (let i = 0; i < nums.length; i ++) {
+        const num = nums[i];
+        //if we see the number 0, stop this loop early
+        if(num === 0) {
+          return numsDoubled;
+        }
+        numsDoubled.push(num * 2);
+      }
+      return numsDoubled;
+  }
+  console.log(doubleArray([1,1,3]));//[2,2,6]
+  console.log(doubleArray([2,2,5, 0, 5]));//[4,4,10]
+
+
+  
+    /*
+      In this Lesson
+      1. array = list of values
+      2. loops (while loop, for loop)
+      3. accumulator pattern
+      4. Create a ToDo List project
+      5. Array are reference, destructuring
+      6. More features of loops: break, contenue, loops inside a function
+    */
+
+
 
   </script>
   
