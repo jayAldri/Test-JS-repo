@@ -3,19 +3,22 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Todo List App</title>
-  <link rel="stylesheet" href="style/style.css">
+  <title>DoTo List App</title>
+  <link rel="stylesheet" href="styles/main.css">
+
+
 </head>
 <body>
-
-  <div sclass="container">
-    <h1>My ToDo List</h1>
-    <input type="text" class="js-name-input" placeholder="Todo name">
-    <button onclick="addToDo();">Add</button>
-    <div class="js-todo-list">
-
+  <h1 class="jahbi-title">Jahbi ToDo List App </h1>
+  <div class="todo-input-grid">
+    <input placeholder="Todo name" class="js-name-input name-input">
+    <input class="js-due-date-input due-date-input" type="date">
+    <button class="add-btn" onclick="
+      addToDo();
+    ">Add</button>
   </div>
-
+  
+  <div class="js-todo-list todo-grid"></div>
 
   <script src="script/script.js"></script>
   

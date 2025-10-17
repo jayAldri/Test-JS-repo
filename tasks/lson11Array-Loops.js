@@ -83,3 +83,21 @@ function minMax(nums) {
 }
 console.log(minMax([])); // {min: 0, max: 0}
 console.log(minMax([-2, 3, -5, 7, 10])); // {min: -5, max: 10}
+
+
+//11n. Cerate a function countWords(words) that takes an array of string and return an object with hoe many times each string appeared.
+
+function countWords(words) {
+  const wordCount = {};
+
+  for (let i = 0; i < words.length; i++) {
+    const word = words[i];
+    if (wordCount[word]) {
+      wordCount[word]++;
+    } else {
+      wordCount[word] = 1;
+    }
+  }
+  return wordCount;
+}
+console.log(countWords(['apple', 'grape', 'apple', 'apple'])); // {apple: 3, grape: 1}

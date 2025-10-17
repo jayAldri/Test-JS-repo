@@ -1,4 +1,13 @@
-const todoList = [];
+const todoList = [
+  {
+    name: 'Kape',
+    dueDate: '2025-010-19'
+  },
+  {
+    name: 'Kape manen',
+    dueDate: '2025-10-20'
+  }
+];
 
 // renderTodoList();
 
@@ -8,8 +17,16 @@ function renderTodoList () {
 
   // This technique is called Generating HTML with Loops
   for (let i = 0; i < todoList.length; i++) {
-    const todo = todoList[i];
-    const html = `<div style="border: 1px solid #ccc; padding: 8px; margin-bottom: 8px;">${todo}</div>`;
+    const todoObject = todoList[i];
+    // const name = todoObject.name;
+    // const dueDate = todoObject.dueDate;
+    const {name, dueDate} = todoObject;
+    const html = `
+      <div>${name}</div>
+      <div>${dueDate}</div>
+      <button onclick="todoList.splice(${i}, 1); 
+      renderTodoList();">Delete
+      </button> `;
     todoListHTML += html;
 
   }
@@ -25,9 +42,22 @@ function addToDo() {
 
   const name = inputElem.value;
 
-  todoList.push(name);
+  const dueDateInputElem = document.querySelector('.js-due-date-input');
+  const dueDate = dueDateInputElem.value;
+
+  todoList.push(
+    {
+      // name: name,
+      // dueDate: dueDate
+
+      //short hand property syntax
+      name, 
+      dueDate
+    }
+    );
 
   inputElem.value = '';
+  dueDateInputElem.value = '';
 
   renderTodoList();
 }

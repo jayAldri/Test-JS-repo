@@ -3,10 +3,6 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: rgb(16, 7, 43);
-}
-.jahbi-title {
-  color: blue;
 }
 .todo-grid, .todo-input-grid {
   display: grid;
@@ -20,7 +16,7 @@ body {
 }
 .add-btn {
   background-color: green;
-  color: rgb(245, 245, 245);
+  color: white;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 1rem;
   border: none;
@@ -41,15 +37,11 @@ body {
 
 .js-todo-list button {
   background-color: red;
-  color: rgb(245, 245, 245);
+  color: white;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 1rem;
   border: none;
   padding: 10px 16px;
   cursor: pointer;
   border-radius: 5px;
-}
-
-.add-todo, .add-dueDate {
-  color:  rgb(245, 245, 245);
 }
