@@ -5,8 +5,20 @@ body {
   align-items: center;
   background-color: rgb(16, 7, 43);
 }
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  cursor: default;
+}
 .jahbi-title {
   color: blue;
+}
+.logo-symbol {
+  font-size: 47px;
+  font-weight: bold;
+  color: #38bdf8; /* Sky blue */
 }
 .todo-grid, .todo-input-grid {
   display: grid;
