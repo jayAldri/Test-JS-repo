@@ -58,7 +58,7 @@
             <div class="dropdown col-sm-6 mt-3">
               <label class="form-label">Genre*</label>
               <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                Dropdown button
+                Select Genre
               </button>
               <ul class="dropdown-menu">
                 <li><a class="dropdown-item" href="#">Fiction</a></li>
@@ -73,10 +73,31 @@
                 <li><a class="dropdown-item" href="#">Self-Help</a></li>
               </ul>
             </div>
-            <div class="col-sm-6">
-              <label class="form-label">Status*</label>
-              <input type="text" placeholder="Status*" class="form-control" required>
+            <div class="dropdown col-sm-6 mt-3">
+              <label class="form-label">Status *</label>
+              <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Select Status
+              </button>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Fiction</a></li>
+                <li><a class="dropdown-item" href="#">Non-Fiction</a></li>
+                <li><a class="dropdown-item" href="#">Science Fiction</a></li>
+                <li><a class="dropdown-item" href="#">Fantasy</a></li>
+                <li><a class="dropdown-item" href="#">Mystery</a></li>
+                <li><a class="dropdown-item" href="#">Romance</a></li>
+                <li><a class="dropdown-item" href="#">Biography</a></li>
+                <li><a class="dropdown-item" href="#">History</a></li>
+                <li><a class="dropdown-item" href="#">Science</a></li>
+                <li><a class="dropdown-item" href="#">Self-Help</a></li>
+              </ul>
             </div>
+
+
+            <div class="mb-3">
+              <label for="imageUpload" class="form-label">Upload Image</label>
+              <input class="form-control" type="file" id="imageUpload" accept="image/*">
+            </div>
+
           </div>
 
 
