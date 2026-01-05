@@ -16,6 +16,11 @@
   echo "<h1> Address Line 1: </h1>" . $s_Address1 . "<br>";
   echo "<h1> Address Line 2: </h1>" . $s_Address2 . "<br>";
   echo "<h1> City: </h1>" . $s_City . "<br>";
+
+  $s_Age = 21;
+  echo "Your age is: " . $s_Age;
+  echo "<br>";
+  
 ?>
   
 </body>
